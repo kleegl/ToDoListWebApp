@@ -1,0 +1,9 @@
+﻿@model Note
+
+<h1 class="text-md-center">Details page</h1>
+<div>
+    <p>@Model.Id</p>
+    <p>@Model.Record</p>
+    <p>@Model.Data</p>
+    <a class="btn btn-primary" asp-area="" asp-controller="Notes" asp-action="ShowAll">Continue</a>
+</div>

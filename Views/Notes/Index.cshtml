@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Note>
+
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center mt-5 m-5 mb-5">
+	<h1 class="display-2">My ToDo List</h1>
+	<div class="container mt-5">
+		<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+			@foreach (var note in Model)
+			{
+				<div class="card text-white bg-secondary mb-3 m-3" style="max-width: 20rem;">
+					<div class="card-header">Note @note.Id</div>
+					<div class="card-body">
+						<h5 class="card-title">@note.Data.DayOfWeek</h5>
+						<p class="card-text">@note.Record</p>
+					</div>
+				</div>
+			}
+			<div class="col">
+			</div>
+		</div>
+	</div>
+
+	<div class="display-6 mt-3">
+		<a class="btn btn-outline-primary" asp-area="" asp-controller="Notes" asp-action="ShowAll">Show All</a>
+		<a class="btn btn-outline-primary" asp-area="" asp-controller="Notes" asp-action="Create">Create New</a>
+		<a class="btn btn-outline-danger" asp-area="" asp-controller="Notes" asp-action="ClearDb">Delete all notes</a>
+	</div>
+</div>

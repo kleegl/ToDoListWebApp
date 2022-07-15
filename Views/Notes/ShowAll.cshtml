@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Note>
+
+<h2 class="text-center mt-5 mb-5 m-5">All Notes in ToDo List</h2>
+
+<div>
+	@foreach (var note in Model)
+	{
+		<p>Id = @note.Id</p>
+		<p>Record = @note.Record</p>
+		<p>Data = @note.Data</p>
+		<div>
+			<a class="btn btn-outline-primary" asp-area="" asp-controller="Notes" asp-action="Edit" asp-route-id="@note.Id">Edit</a>
+			<a class="btn btn-primary" asp-area="" asp-controller="Notes" asp-action="Delete" asp-route-id="@note.Id">Delete</a>
+			<a class="btn btn-primary" asp-area="" asp-controller="Notes" asp-action="Details" asp-route-id="@note.Id">Details</a>
+			<hr />
+			<br />
+		</div>
+	}
+</div>
+<div class="text-center mt-5 mb-5 m-5">
+	<a class="btn btn-outline-primary" asp-area="" asp-controller="Notes" asp-action="Index">Back to Main</a>
+	<a class="btn btn-outline-primary" asp-area="" asp-controller="Notes" asp-action="Create">Create New</a>
+</div>
